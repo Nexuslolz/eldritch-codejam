@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>"Древний Ужас"</title>
+    <link rel="stylesheet" href="./style/normalize.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body class="page-body">
+    <main class="page-body__main">
+      <div class="main-container">
+        <div class="main-container__item item-1">
+          <img
+            src="./assets/Ancients/Azathoth.png"
+            alt="Азатот"
+            class="main-container__img"
+          />
+          <a
+            href="./assets/Ancients/Azathoth.png"
+            target="_blank"
+            class="main-conteiner__link"
+            >Смотреть!</a
+          >
+        </div>
+        <div class="main-container__item item-2">
+          <img
+            src="./assets/Ancients/Cthulthu.png"
+            alt="Ктулху"
+            class="main-container__img"
+          />
+          <a
+            href="./assets/Ancients/Cthulthu.png"
+            target="_blank"
+            class="main-conteiner__link"
+            >Смотреть!</a
+          >
+        </div>
+        <div class="main-container__item item-3">
+          <img
+            src="./assets/Ancients/IogSothoth.png"
+            alt="Йог-Сотот"
+            class="main-container__img"
+          />
+          <a
+            href="./assets/Ancients/IogSothoth.png"
+            target="_blank"
+            class="main-conteiner__link"
+            >Смотреть!</a
+          >
+        </div>
+        <div class="main-container__item item-4">
+          <img
+            src="./assets/Ancients/ShubNiggurath.png"
+            alt="Шуб-Ниггурат"
+            class="main-container__img"
+          />
+          <a
+            href="./assets/Ancients/ShubNiggurath.png"
+            target="_blank"
+            class="main-conteiner__link"
+            >Смотреть!</a
+          >
+        </div>
+        <form class="main-container__form">
+          <div class="main-form__overlay"></div>
+          <div class="main-form">
+            <h3 class="main-form__header">Выберите способ создания колоды</h3>
+            <ul class="main-form-list">
+              <li class="main-form-list__item">
+                <input
+                  id="very-easy"
+                  type="radio"
+                  name="difficulty"
+                  class="main-form-list__checkbox visibility-hidden"
+                />
+                <label for="very-easy" class="main-form-list__label">
+                  Очень лёгкий
+                </label>
+              </li>
+              <li class="main-form-list__item">
+                <input
+                  id="easy"
+                  type="radio"
+                  name="difficulty"
+                  class="main-form-list__checkbox"
+                />
+                <label for="easy" class="main-form-list__label"> Лёгкий </label>
+              </li>
+              <li class="main-form-list__item">
+                <input
+                  id="middle"
+                  type="radio"
+                  name="difficulty"
+                  class="main-form-list__checkbox"
+                  checked
+                />
+                <label for="middle" class="main-form-list__label">
+                  Средний
+                </label>
+              </li>
+              <li class="main-form-list__item">
+                <input
+                  id="hard"
+                  type="radio"
+                  name="difficulty"
+                  class="main-form-list__checkbox"
+                />
+                <label for="hard" class="main-form-list__label">
+                  Сложный
+                </label>
+              </li>
+              <li class="main-form-list__item">
+                <input
+                  id="very-hard"
+                  type="radio"
+                  name="difficulty"
+                  class="main-form-list__checkbox"
+                />
+                <label for="very-hard" class="main-form-list__label">
+                  Очень сложный
+                </label>
+              </li>
+            </ul>
+            <button class="main-form__btn" type="button">Поехали</button>
+          </div>
+        </form>
+        <div class="main-container__gameplay">
+          <div class="gameplay">
+            <div class="gameplay__stage-panel">
+              <span class="gameplay__header">Первая стадия</span>
+              <ul class="gameplay__stage-list stage-list">
+                <li class="stage-list__item item-stage1-row-1"></li>
+                <li class="stage-list__item item-stage1-row-2"></li>
+                <li class="stage-list__item item-stage1-row-3"></li>
+              </ul>
+            </div>
+            <div class="gameplay__stage-panel">
+              <span class="gameplay__header">Вторая стадия</span>
+              <ul class="gameplay__stage-list stage-list">
+                <li class="stage-list__item item-stage2-row-1"></li>
+                <li class="stage-list__item item-stage2-row-2"></li>
+                <li class="stage-list__item item-stage2-row-3"></li>
+              </ul>
+            </div>
+            <div class="gameplay__stage-panel">
+              <span class="gameplay__header">Третья стадия</span>
+              <ul class="gameplay__stage-list stage-list">
+                <li class="stage-list__item item-stage3-row-1"></li>
+                <li class="stage-list__item item-stage3-row-2"></li>
+                <li class="stage-list__item item-stage3-row-3"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-deck">
+            <div class="card-deck__item item__close">
+              <img
+                src="./assets/mythicCardBackground.png"
+                alt="close card"
+                class="card-deck__img img__close"
+              />
+            </div>
+            <div class="card-deck__item item__open">
+              <img
+                src="./assets/MythicCards/blue/blue1.png"
+                alt="open card"
+                class="card-deck__img img__open"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="page-body__footer">
+      <div class="footer-info">
+        <div class="footer-info__item">
+          <a href="https://github.com/Nexuslolz" class="footer-info__link"
+            ><img
+              src="./img/GitHub.svg"
+              alt="github"
+              class="footer-info__img"
+              width="25"
+              height="25"
+            />
+            <span class="footer-info__text"> Мой Github</span></a
+          >
+        </div>
+        <div class="footer-info__item">
+          <span class="footer-info__text">© 2022 by Alexandr Klyosov</span>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/index.js"></script>
+    <script src="./js/mix.js"></script>
+  </body>
+</html>
