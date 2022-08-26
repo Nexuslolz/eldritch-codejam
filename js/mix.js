@@ -153,7 +153,7 @@ function queueElem() {
             }
         }
 
-        return imgOpen.src = `../assets/MythicCards/${color}/${result}`
+        return imgOpen.src = `https://github.com/Nexuslolz/eldritch-codejam/tree/gh-pages/assets/MythicCards/${color}/${result}`
     }
 }
 
