@@ -132,6 +132,7 @@ function queueElem() {
                 thirdStageSum -= 1
             }
         }
+
         if (color === 'blue') {
             if (stageItem[2].textContent > 0) {
                 stageItem[2].textContent -= 1
@@ -153,7 +154,7 @@ function queueElem() {
             }
         }
 
-        return imgOpen.src = `https://github.com/Nexuslolz/eldritch-codejam/tree/gh-pages/assets/MythicCards/${color}/${result}`
+        return imgOpen.src = `https://raw.githubusercontent.com/Nexuslolz/eldritch-codejam/gh-pages/assets/MythicCards/${color}/${result}`
     }
 }
 
