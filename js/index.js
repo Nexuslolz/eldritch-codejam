@@ -22,4 +22,9 @@ card.forEach((elem) => {
 
 overlay.addEventListener('click', () => {
     form.classList.remove('main-container__form_open')
+    card.forEach((item) => {
+        if (item.classList.contains('main-container__img_open')) {
+            item.classList.remove('main-container__img_open')
+        }
+    })
 })
