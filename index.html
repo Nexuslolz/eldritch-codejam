@@ -21,7 +21,7 @@
             href="./assets/Ancients/Azathoth.png"
             target="_blank"
             class="main-conteiner__link"
-            >Смотреть!</a
+            >Отменить выбор!</a
           >
         </div>
         <div class="main-container__item item-2">
@@ -34,7 +34,7 @@
             href="./assets/Ancients/Cthulthu.png"
             target="_blank"
             class="main-conteiner__link"
-            >Смотреть!</a
+            >Отменить выбор!</a
           >
         </div>
         <div class="main-container__item item-3">
@@ -47,7 +47,7 @@
             href="./assets/Ancients/IogSothoth.png"
             target="_blank"
             class="main-conteiner__link"
-            >Смотреть!</a
+            >Отменить выбор!</a
           >
         </div>
         <div class="main-container__item item-4">
@@ -60,7 +60,7 @@
             href="./assets/Ancients/ShubNiggurath.png"
             target="_blank"
             class="main-conteiner__link"
-            >Смотреть!</a
+            >Отменить выбор!</a
           >
         </div>
         <form class="main-container__form">
@@ -74,6 +74,7 @@
                   type="radio"
                   name="difficulty"
                   class="main-form-list__checkbox visibility-hidden"
+                  value="Очень лёгкий"
                 />
                 <label for="very-easy" class="main-form-list__label">
                   Очень лёгкий
@@ -85,6 +86,7 @@
                   type="radio"
                   name="difficulty"
                   class="main-form-list__checkbox"
+                  value="Лёгкий"
                 />
                 <label for="easy" class="main-form-list__label"> Лёгкий </label>
               </li>
@@ -95,6 +97,7 @@
                   name="difficulty"
                   class="main-form-list__checkbox"
                   checked
+                  value="Средний"
                 />
                 <label for="middle" class="main-form-list__label">
                   Средний
@@ -106,6 +109,7 @@
                   type="radio"
                   name="difficulty"
                   class="main-form-list__checkbox"
+                  value="Сложный"
                 />
                 <label for="hard" class="main-form-list__label">
                   Сложный
@@ -117,6 +121,7 @@
                   type="radio"
                   name="difficulty"
                   class="main-form-list__checkbox"
+                  value="Очень сложный"
                 />
                 <label for="very-hard" class="main-form-list__label">
                   Очень сложный
@@ -189,5 +194,11 @@
     </footer>
     <script src="js/index.js"></script>
     <script type="module" src="js/mix.js"></script>
+    <script
+      type="module"
+      src="/assets/MythicCards/green/index.js"
+      defer
+    ></script>
+    <script type="module" src="/data/mythicCards/green/index.js" defer></script>
   </body>
 </html>
