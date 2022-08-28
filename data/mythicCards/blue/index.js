@@ -1,78 +1,78 @@
-import blueCardsAssets from '../../../assets/MythicCards/blue';
+import blueCardsAssets from '../../../assets/MythicCards/blue/index.js';
 
-const cardsData = [
+const blueCardsData = [
   {
-    id: 'blue1',
-    cardFace: blueCardsAssets.blue1,
+    id: 'blue01',
+    cardFace: blueCardsAssets[1],
     difficulty: 'hard',
-    color:'blue'
+    color: 'blue'
   },
   {
-    id: 'blue2',
-    cardFace: blueCardsAssets.blue2,
+    id: 'blue02',
+    cardFace: blueCardsAssets[2],
     difficulty: 'hard',
-    color:'blue'
+    color: 'blue'
   },
   {
-    id: 'blue3',
-    cardFace: blueCardsAssets.blue3,
+    id: 'blue03',
+    cardFace: blueCardsAssets[3],
     difficulty: 'easy',
-    color:'blue'
+    color: 'blue'
   },
   {
-    id: 'blue4',
-    cardFace: blueCardsAssets.blue4,
+    id: 'blue04',
+    cardFace: blueCardsAssets[4],
     difficulty: 'easy',
-    color:'blue'
+    color: 'blue'
   },
   {
-    id: 'blue5',
-    cardFace: blueCardsAssets.blue5,
+    id: 'blue05',
+    cardFace: blueCardsAssets[5],
     difficulty: 'easy',
-    color:'blue'
+    color: 'blue'
   },
   {
-    id: 'blue6',
-    cardFace: blueCardsAssets.blue6,
+    id: 'blue06',
+    cardFace: blueCardsAssets[6],
     difficulty: 'hard',
-    color:'blue'
+    color: 'blue'
   },
   {
-    id: 'blue7',
-    cardFace: blueCardsAssets.blue7,
+    id: 'blue07',
+    cardFace: blueCardsAssets[7],
     difficulty: 'normal',
-    color:'blue'
+    color: 'blue'
   },
   {
-    id: 'blue8',
-    cardFace: blueCardsAssets.blue8,
+    id: 'blue08',
+    cardFace: blueCardsAssets[8],
     difficulty: 'hard',
-    color:'blue'
+    color: 'blue'
   },
   {
-    id: 'blue9',
-    cardFace: blueCardsAssets.blue9,
+    id: 'blue09',
+    cardFace: blueCardsAssets[9],
     difficulty: 'normal',
-    color:'blue'
+    color: 'blue'
   },
   {
     id: 'blue10',
-    cardFace: blueCardsAssets.blue10,
+    cardFace: blueCardsAssets[10],
     difficulty: 'easy',
-    color:'blue'
+    color: 'blue'
   },
   {
     id: 'blue11',
-    cardFace: blueCardsAssets.blue11,
+    cardFace: blueCardsAssets[11],
     difficulty: 'normal',
-    color:'blue'
+    color: 'blue'
   },
   {
     id: 'blue12',
-    cardFace: blueCardsAssets.blue12,
+    cardFace: blueCardsAssets[12],
     difficulty: 'normal',
-    color:'blue'
+    color: 'blue'
   },
 ]
 
-export default cardsData
+export default blueCardsData

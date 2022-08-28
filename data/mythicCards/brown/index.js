@@ -1,132 +1,132 @@
-import brownCardsAssets from '../../../assets/MythicCards/brown';
+import brownCardsAssets from '../../../assets/MythicCards/brown/index.js';
 
-const cardsData = [
+const brownCardsData = [
   {
-    id: 'brown1',
-    cardFace: brownCardsAssets.brown1,
+    id: 'brown01',
+    cardFace: brownCardsAssets[1],
     difficulty: 'normal',
-    color:'brown'
+    color: 'brown'
   },
   {
-    id: 'brown2',
-    cardFace: brownCardsAssets.brown2,
+    id: 'brown02',
+    cardFace: brownCardsAssets[2],
     difficulty: 'normal',
-    color:'brown'
+    color: 'brown'
   },
   {
-    id: 'brown3',
-    cardFace: brownCardsAssets.brown3,
+    id: 'brown03',
+    cardFace: brownCardsAssets[3],
     difficulty: 'normal',
-    color:'brown'
+    color: 'brown'
   },
   {
-    id: 'brown4',
-    cardFace: brownCardsAssets.brown4,
+    id: 'brown04',
+    cardFace: brownCardsAssets[4],
     difficulty: 'normal',
-    color:'brown'
+    color: 'brown'
   },
   {
-    id: 'brown5',
-    cardFace: brownCardsAssets.brown5,
+    id: 'brown05',
+    cardFace: brownCardsAssets[5],
     difficulty: 'normal',
-    color:'brown'
+    color: 'brown'
   },
   {
-    id: 'brown6',
-    cardFace: brownCardsAssets.brown6,
+    id: 'brown06',
+    cardFace: brownCardsAssets[6],
     difficulty: 'hard',
-    color:'brown'
+    color: 'brown'
   },
   {
-    id: 'brown7',
-    cardFace: brownCardsAssets.brown7,
+    id: 'brown07',
+    cardFace: brownCardsAssets[7],
     difficulty: 'hard',
-    color:'brown'
+    color: 'brown'
   },
   {
-    id: 'brown8',
-    cardFace: brownCardsAssets.brown8,
+    id: 'brown08',
+    cardFace: brownCardsAssets[8],
     difficulty: 'hard',
-    color:'brown'
+    color: 'brown'
   },
   {
-    id: 'brown9',
-    cardFace: brownCardsAssets.brown9,
+    id: 'brown09',
+    cardFace: brownCardsAssets[9],
     difficulty: 'hard',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown10',
-    cardFace: brownCardsAssets.brown10,
+    cardFace: brownCardsAssets[10],
     difficulty: 'hard',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown11',
-    cardFace: brownCardsAssets.brown11,
+    cardFace: brownCardsAssets[11],
     difficulty: 'easy',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown12',
-    cardFace: brownCardsAssets.brown12,
+    cardFace: brownCardsAssets[12],
     difficulty: 'easy',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown13',
-    cardFace: brownCardsAssets.brown13,
+    cardFace: brownCardsAssets[13],
     difficulty: 'easy',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown14',
-    cardFace: brownCardsAssets.brown14,
+    cardFace: brownCardsAssets[14],
     difficulty: 'easy',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown15',
-    cardFace: brownCardsAssets.brown15,
+    cardFace: brownCardsAssets[15],
     difficulty: 'normal',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown16',
-    cardFace: brownCardsAssets.brown16,
+    cardFace: brownCardsAssets[16],
     difficulty: 'normal',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown17',
-    cardFace: brownCardsAssets.brown17,
+    cardFace: brownCardsAssets[17],
     difficulty: 'normal',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown18',
-    cardFace: brownCardsAssets.brown18,
+    cardFace: brownCardsAssets[18],
     difficulty: 'normal',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown19',
-    cardFace: brownCardsAssets.brown19,
+    cardFace: brownCardsAssets[19],
     difficulty: 'normal',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown20',
-    cardFace: brownCardsAssets.brown20,
+    cardFace: brownCardsAssets[20],
     difficulty: 'normal',
-    color:'brown'
+    color: 'brown'
   },
   {
     id: 'brown21',
-    cardFace: brownCardsAssets.brown21,
+    cardFace: brownCardsAssets[21],
     difficulty: 'easy',
-    color:'brown'
+    color: 'brown'
   },
 ]
 
-export default cardsData
+export default brownCardsData
