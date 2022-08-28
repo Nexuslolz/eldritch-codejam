@@ -2,109 +2,166 @@ import cardBrown from '../assets/MythicCards/brown/index.js'
 import cardBlue from '../assets/MythicCards/blue/index.js'
 import cardGreen from '../assets/MythicCards/green/index.js'
 import ancientsData from '../data/ancients.js'
-// import difficulties from '../data/difficulties'
-
+import greenCardsData from '../data/mythicCards/green/index.js'
+import brownCardsData from '../data/mythicCards/brown/index.js'
+import blueCardsData from '../data/mythicCards/blue/index.js'
 
 const gameplay = document.querySelector('.gameplay')
 const cardDeck = document.querySelector('.card-deck')
 const imgClose = document.querySelector('.img__close')
 const imgOpen = document.querySelector('.img__open')
-const itemOpen = document.querySelector('.item__open')
 
-const difficulty = document.querySelectorAll('.main-form-list__checkbox')
+const difficult = document.querySelectorAll('.main-form-list__checkbox')
 const stageItem = document.querySelectorAll('.stage-list__item')
 const nameStage = document.querySelectorAll('.gameplay__header')
 
-
-startBtn.addEventListener('click', () => {
-    gameplay.classList.add('gameplay_open')
-    cardDeck.classList.add('card-deck_open')
-    form.classList.remove('main-container__form_open')
-    card.forEach((elem) => {
-        elem.removeEventListener('click', openForm)
-    })
-})
-
-
 let stageArr = []
+let firstStageArr = []
+let secondStageArr = []
+let thirdStageArr = []
+let stageQueue = [firstStageArr, secondStageArr, thirdStageArr]
+let cardQueue = []
 
-card.forEach((elem, idx) => {
-    elem.addEventListener('click', () => {
-        let greenDeck
-        let brownDeck
-        let blueDeck
-
-        greenDeck = ancientsData[idx].firstStage.greenCards
-        brownDeck = ancientsData[idx].firstStage.brownCards
-        blueDeck = ancientsData[idx].firstStage.blueCards
-        stageArr.push(greenDeck, brownDeck, blueDeck)
-
-        greenDeck = ancientsData[idx].secondStage.greenCards
-        brownDeck = ancientsData[idx].secondStage.brownCards
-        blueDeck = ancientsData[idx].secondStage.blueCards
-        stageArr.push(greenDeck, brownDeck, blueDeck)
-
-        greenDeck = ancientsData[idx].thirdStage.greenCards
-        brownDeck = ancientsData[idx].thirdStage.brownCards
-        blueDeck = ancientsData[idx].thirdStage.blueCards
-        stageArr.push(greenDeck, brownDeck, blueDeck)
+function checkDifficulty() {
+    let elemValue
+    difficult.forEach((elem) => {
+        if (elem.checked) {
+            elemValue = elem.value
+        }
     })
-})
-
-overlay.addEventListener('click', () => {
-    stageArr = []
-})
+    return elemValue
+}
 
 function getRandomNumber(color) {
     let randomNumber = Math.ceil(Math.random() * Object.keys(color).length)
     return randomNumber
 }
 
-let firstStageArr = []
-let secondStageArr = []
-let thirdStageArr = []
-let stageQueue = [firstStageArr, secondStageArr, thirdStageArr]
-
-let cardQueue = []
-
-
 function addQueue() {
     stageItem.forEach((elem, idx) => {
         elem.textContent = `${stageArr[idx]}`
     })
 
+    const difficultyLevel = checkDifficulty()
+
     for (let i = 0; i < stageItem.length; i++) {
-        if (i === 0 || i === 3 || i === 6)
-            for (let j = 0 - 1; j < stageItem[i].textContent - 1; j++) {
-                if (i === 0) {
-                    firstStageArr.push(cardGreen[getRandomNumber(cardGreen)])
-                } else if (i === 3) {
-                    secondStageArr.push(cardGreen[getRandomNumber(cardGreen)])
-                } else if (i === 6) {
-                    thirdStageArr.push(cardGreen[getRandomNumber(cardGreen)])
+
+        function useDifficulty(firstIdx, secondIdx, thirdIdx, colorCard, colorDeck) {
+            let maxValue
+            if (i === firstIdx) {
+                maxValue = Number(stageItem[firstIdx].textContent)
+            } else if (i === secondIdx) {
+                maxValue = Number(stageItem[secondIdx].textContent)
+            } else if (i === thirdIdx) {
+                maxValue = Number(stageItem[thirdIdx].textContent)
+            }
+
+            if (difficultyLevel === 'Средний') {
+                if (i === firstIdx) {
+                    firstStageArr.push(colorCard[getRandomNumber(colorCard)])
+                } else if (i === secondIdx) {
+                    secondStageArr.push(colorCard[getRandomNumber(colorCard)])
+                } else if (i === thirdIdx) {
+                    thirdStageArr.push(colorCard[getRandomNumber(colorCard)])
+                }
+            } else if (difficultyLevel === 'Лёгкий') {
+                let cardInfo
+                if (i === firstIdx) {
+                    let arr = []
+                    for (let l = 0; l < colorDeck.length; l++) {
+                        cardInfo = colorDeck[Math.floor(Math.random() * colorDeck.length)]
+                        if (cardInfo.difficulty !== 'hard') {
+                            while (arr.length <= maxValue) {
+                                arr.push(cardInfo.cardFace)
+                            }
+                        }
+                    }
+                    firstStageArr.push(arr[Math.floor(Math.random() * arr.length)])
+                    shuffle(firstStageArr)
+                } else if (i === secondIdx) {
+                    let arr = []
+                    for (let l = 0; l < colorDeck.length; l++) {
+                        cardInfo = colorDeck[Math.floor(Math.random() * colorDeck.length)]
+                        if (cardInfo.difficulty !== 'hard') {
+                            while (arr.length <= maxValue) {
+                                arr.push(cardInfo.cardFace)
+                            }
+                        }
+                    }
+                    secondStageArr.push(arr[Math.floor(Math.random() * arr.length)])
+                    shuffle(secondStageArr)
+                } else if (i === thirdIdx) {
+                    let arr = []
+                    for (let l = 0; l < colorDeck.length; l++) {
+                        cardInfo = colorDeck[Math.floor(Math.random() * colorDeck.length)]
+                        if (cardInfo.difficulty !== 'hard') {
+                            while (arr.length <= maxValue) {
+                                arr.push(cardInfo.cardFace)
+                            }
+                        }
+                    }
+                    thirdStageArr.push(arr[Math.floor(Math.random() * arr.length)])
+                    shuffle(thirdStageArr)
                 }
             }
-        if (i === 1 || i === 4 || i === 7)
-            for (let j = 0 - 1; j < stageItem[i].textContent - 1; j++) {
-                if (i === 1) {
-                    firstStageArr.push(cardBrown[getRandomNumber(cardBrown)])
-                } else if (i === 4) {
-                    secondStageArr.push(cardBrown[getRandomNumber(cardBrown)])
-                } else if (i === 7) {
-                    thirdStageArr.push(cardBrown[getRandomNumber(cardBrown)])
+            else if (difficultyLevel === 'Сложный') {
+                let cardInfo
+                if (i === firstIdx) {
+                    let arr = []
+                    for (let l = 0; l < colorDeck.length; l++) {
+                        cardInfo = colorDeck[Math.floor(Math.random() * colorDeck.length)]
+                        if (cardInfo.difficulty !== 'easy') {
+                            while (arr.length <= maxValue) {
+                                arr.push(cardInfo.cardFace)
+                            }
+                        }
+                    }
+                    firstStageArr.push(arr[Math.floor(Math.random() * arr.length)])
+                    shuffle(firstStageArr)
+                } else if (i === secondIdx) {
+                    let arr = []
+                    for (let l = 0; l < colorDeck.length; l++) {
+                        cardInfo = colorDeck[Math.floor(Math.random() * colorDeck.length)]
+                        if (cardInfo.difficulty !== 'easy') {
+                            while (arr.length <= maxValue) {
+                                arr.push(cardInfo.cardFace)
+                            }
+                        }
+                    }
+                    secondStageArr.push(arr[Math.floor(Math.random() * arr.length)])
+                    shuffle(secondStageArr)
+                } else if (i === thirdIdx) {
+                    let arr = []
+                    for (let l = 0; l < colorDeck.length; l++) {
+                        cardInfo = colorDeck[Math.floor(Math.random() * colorDeck.length)]
+                        if (cardInfo.difficulty !== 'easy') {
+                            while (arr.length <= maxValue) {
+                                arr.push(cardInfo.cardFace)
+                            }
+                        }
+                    }
+                    thirdStageArr.push(arr[Math.floor(Math.random() * arr.length)])
+                    shuffle(thirdStageArr)
                 }
             }
-        if (i === 2 || i === 5 || i === 8)
-            for (let j = 0 - 1; j < stageItem[i].textContent - 1; j++) {
-                if (i === 2) {
-                    firstStageArr.push(cardBlue[getRandomNumber(cardBlue)])
-                } else if (i === 5) {
-                    secondStageArr.push(cardBlue[getRandomNumber(cardBlue)])
-                } else if (i === 8) {
-                    thirdStageArr.push(cardBlue[getRandomNumber(cardBlue)])
-                }
+
+        }
+
+
+        for (let j = 0; j < Number(stageItem[i].textContent); j++) {
+            if (i === 0 || i === 3 || i === 6) {
+                useDifficulty(0, 3, 6, cardGreen, greenCardsData)
             }
+            if (i === 1 || i === 4 || i === 7) {
+                useDifficulty(1, 4, 7, cardBrown, brownCardsData)
+            }
+            if (i === 2 || i === 5 || i === 8) {
+                useDifficulty(2, 5, 8, cardBlue, blueCardsData)
+            }
+        }
     }
+    console.log(firstStageArr, secondStageArr, thirdStageArr)
+
 
     function shuffle(arr) {
         for (let i = arr.length - 1; i > 0; i--) {
@@ -123,9 +180,6 @@ function addQueue() {
         }
     }
 }
-
-startBtn.addEventListener('click', addQueue)
-
 
 function queueNextElem() {
     if (cardQueue.length > 0) {
@@ -190,6 +244,48 @@ function queueNextElem() {
 
 
 
+
+
+
+
+startBtn.addEventListener('click', () => {
+    gameplay.classList.add('gameplay_open')
+    cardDeck.classList.add('card-deck_open')
+    form.classList.remove('main-container__form_open')
+    card.forEach((elem) => {
+        elem.removeEventListener('click', openForm)
+    })
+    checkDifficulty()
+})
+
+card.forEach((elem, idx) => {
+    elem.addEventListener('click', () => {
+        let greenDeck
+        let brownDeck
+        let blueDeck
+
+        greenDeck = ancientsData[idx].firstStage.greenCards
+        brownDeck = ancientsData[idx].firstStage.brownCards
+        blueDeck = ancientsData[idx].firstStage.blueCards
+        stageArr.push(greenDeck, brownDeck, blueDeck)
+
+        greenDeck = ancientsData[idx].secondStage.greenCards
+        brownDeck = ancientsData[idx].secondStage.brownCards
+        blueDeck = ancientsData[idx].secondStage.blueCards
+        stageArr.push(greenDeck, brownDeck, blueDeck)
+
+        greenDeck = ancientsData[idx].thirdStage.greenCards
+        brownDeck = ancientsData[idx].thirdStage.brownCards
+        blueDeck = ancientsData[idx].thirdStage.blueCards
+        stageArr.push(greenDeck, brownDeck, blueDeck)
+    })
+})
+
+overlay.addEventListener('click', () => {
+    stageArr = []
+})
+
+startBtn.addEventListener('click', addQueue)
 
 imgClose.addEventListener('click', queueNextElem)
 

@@ -2,9 +2,10 @@ const card = document.querySelectorAll('.main-container__img')
 const overlay = document.querySelector('.main-form__overlay')
 const form = document.querySelector('.main-container__form')
 const startBtn = document.querySelector('.main-form__btn')
+const exitLink = document.querySelectorAll('.main-conteiner__link')
 
 function openForm(event) {
-    card.forEach((item) => {
+    card.forEach((item, idx) => {
         if (item.classList.contains('main-container__img_open')) {
             item.classList.remove('main-container__img_open')
         }
@@ -26,5 +27,11 @@ overlay.addEventListener('click', () => {
         if (item.classList.contains('main-container__img_open')) {
             item.classList.remove('main-container__img_open')
         }
+    })
+})
+
+exitLink.forEach((elem) => {
+    elem.addEventListener('click', () => {
+        location.reload()
     })
 })
